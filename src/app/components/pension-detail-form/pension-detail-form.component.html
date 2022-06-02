@@ -1,0 +1,123 @@
+<div class="container total">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Register Pensioner</h1>
+        </div>
+    </div>
+    
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="row border">
+      <div class="col">
+        <p class="fs-6 center">Pensioner Name </p>
+      </div>
+      <div class="col">
+        <mat-form-field>
+            <input matInput placeholder="Enter Pensioner Name" formControlName="name" autocomplete="off">
+    
+          <mat-error *ngIf="name?.invalid && name?.touched!" class="has-text-danger">
+            </mat-error> 
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row border">
+      <div class="col">
+        <p class="fs-6 center"> Date of Birth </p>
+      </div>
+      <div class="col">
+        <mat-form-field>
+            <input type="date" matInput placeholder="Select Pensioner Date of Birth" formControlName="dateOfBirth" autocomplete="off">
+        </mat-form-field>
+      </div>
+      <div class="col border-start">
+        <p class="fs-6 center"> PAN </p>
+      </div>
+      <div class="col">
+        <mat-form-field>
+            <input matInput placeholder="Enter Pensioner PAN Number" formControlName="pan" autocomplete="off">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row border">
+        <div class="col">
+            <p class="fs-6 center"> Aadhaar Number </p>
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Enter Pensioner Aadhaar Number" formControlName="aadharNumber" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col border-start">
+            <p class="fs-6 center"> Pension Type </p>
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <select matNativeControl required formControlName="selfOrFamily">
+                    <option value="Self">Self</option>
+                    <option value="Family">Family</option>
+                  </select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col">
+            <p class="fs-6 center">Salary Earned</p>
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Enter Pensioner Last Earned Salary" formControlName="salaryEarned" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col border-start">
+            <p class="fs-6 center">Allowances</p>
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Enter Pensioner's Allowances" formControlName="allowances" autocomplete="off">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col">
+            <p class="fs-6 center">Account Number</p>
+            
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Enter Pensioner Account Number" formControlName="accountNumber" autocomplete="off">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col">
+            <p class="fs-6 center">Bank name</p>
+            
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Enter the name of the Bank" formControlName="bankName" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col border-start">
+            <p class="fs-6 center">Bank Sector</p>
+            
+        </div>
+        <div class="col">
+            <mat-form-field>
+                <select matNativeControl formControlName="publicOrPrivate" >
+                    <option value="Public">Public</option>
+                    <option value="Private">Private</option>
+                  </select>
+            </mat-form-field>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col text-center">
+            <button mat-raised-button [disabled]="myForm.invalid" color="primary">Resgister Details</button>
+        </div>
+    </div>
+</form>
+</div>
+
+
+
+  

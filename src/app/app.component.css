@@ -1,0 +1,12 @@
+.display{
+    display: inline-block;
+}
+
+.display-right{
+    float: right;
+}
+.displaynav{
+    display: inline-block;
+    margin-left: 40px;
+}
+

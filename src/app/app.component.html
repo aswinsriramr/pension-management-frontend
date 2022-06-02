@@ -1,0 +1,18 @@
+<div class="bg-dark p-4">
+    <h1 class="text-white h1 display">Pension Management System</h1>
+    <nav *ngIf="loggedin" class="navbar navbar-expand-sm bg-dark navbar-dark displaynav">
+        <ul class="navbar-nav text-center">
+          <li class=" nav-item">
+            <a routerLink="pensiondetail"  routerLinkActive="active" class="nav-link">View Details</a>
+          </li>
+          <li class=" nav-item">
+            <a routerLink="pension-form"  routerLinkActive="active" class="nav-link">Register Details</a>
+          </li>
+        </ul>
+      </nav>
+    <button type="button" *ngIf="loggedin" (click)="signOut()" class="btn btn-light display-right">Sign out</button>
+</div>
+
+
+<router-outlet></router-outlet>
+<lib-ng-toast></lib-ng-toast>

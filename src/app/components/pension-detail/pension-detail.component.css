@@ -1,0 +1,29 @@
+mat-form-field {
+    display: block;
+}
+
+.mat-accent {
+    background-color: #42A948 !important;
+}
+
+.ng-valid[required],
+ul {
+    text-align: left;
+}
+
+.total{
+    padding-top: 50px;
+}
+
+.details{
+    padding-top: 10px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding:10px;
+    }
+.pad{
+    padding-left: 0px;
+}

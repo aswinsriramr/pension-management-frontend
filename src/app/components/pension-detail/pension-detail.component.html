@@ -1,0 +1,167 @@
+
+<!-- <div class="container">
+    <form (ngSubmit)="getpensionDetails()">
+        <div class="form-group">
+            <label>Aadhar Number</label>
+            <input type="text" class="form-control" id="username"
+                [(ngModel)] = "aadharNumber" name = "username"> 
+        </div>
+        <button class = "btn btn-success" type ="submit"> Get Details</button>
+    </form>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pension Amount</th>
+                <th>Bank Service Charge</th>
+            </tr>
+        </thead>
+        <tbody>
+                <td>{{pensionDetails.pensionAmount}}</td>
+                <td>{{pensionDetails.bankServiceCharge}}</td>
+        </tbody>
+    </table>
+    
+    
+    <button class = "btn btn-success" (click)="signOut()" > Sign Out</button>
+</div> -->
+
+
+<div class="container total">
+    
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class = "row">
+            <div class ="col"> <p class ="center fs-4">Enter Aadhar Number :</p></div>
+            <div class="col">
+                <mat-form-field>
+                    <input matInput placeholder="Enter Pensioner Aadhaar Number" formControlName="aadharNumber" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class ="col">
+                <button mat-raised-button [disabled]="myForm.invalid" color="primary">View Pension Detials</button>
+            </div>
+        </div>
+        </form>
+        <div *ngIf="validinput" class = "row container">
+            <p class="fs-5 pad">Pension Details</p>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr class="table-dark">
+                        <th>Pension Amount</th>
+                        <th>Bank Service Charge</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <td>{{pensionDetails.pensionAmount}}</td>
+                        <td>{{pensionDetails.bankServiceCharge}}</td>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="validinput" class = "row">
+            <div class="col text-center">
+                <button (click)="viewDetails()" mat-raised-button class="btn btn-link" color="primary">View Pensioner Details</button>
+            </div>
+            
+        </div>
+        <div *ngIf="viewdetails" class="container details">
+            <p class="fs-5 pad">Pensioner Details</p>
+            <div class="row">
+              <div class="col border">
+                <p class ="center fs-6">Pensioner Name</p>
+              </div>
+              <div class="col border">
+                <p class ="center fs-6">{{pensionerDetails!.name}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col border">
+                <p class ="center fs-8">Date of Birth</p>
+            </div>
+            <div class="col border">
+                <p class ="center fs-8"> {{pensionerDetails!.dateOfBirth}}</p>
+            </div>
+            <div class="col border">
+                <p class ="center fs-8"> PAN</p>
+            </div>
+            <div class="col border"><p class ="center fs-8"> {{pensionerDetails!.pan}}</p>  </div>
+            </div>
+          <div class="row">
+              <div class="col border">
+                <p class ="center fs-8"> Aadhaar Number</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{pensionerDetails!.aadharNumber}}</p>
+                
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> Pension Type</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{pensionerDetails!.selfOrFamily}}</p>
+                  
+              </div>
+          </div>
+          <div class="row">
+              <div class="col border">
+                <p class ="center fs-8"> Salary Earned</p>  
+                
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{pensionerDetails!.salaryEarned}}</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> Allowances</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{pensionerDetails!.allowances}}</p>
+                 
+              </div>
+          </div>
+          <div class="row">
+              <div class="col border">
+                <p class ="center fs-8">  Account Number</p>
+                 
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{this.pensionerDetails!.bankDetails.accountNumber}}</p>
+                  
+              </div>
+          </div>
+          <div class="row">
+              <div class="col border">
+                <p class ="center fs-8">  Bank name</p>
+                 
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{this.pensionerDetails!.bankDetails.bankName}}</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> Bank Sector</p>
+                  
+              </div>
+              <div class="col border">
+                <p class ="center fs-8"> {{this.pensionerDetails!.bankDetails.publicOrPrivate}}</p>
+                 
+              </div>
+          </div> 
+        </div>
+</div>
+    
+
+
+<!--
+
+
+
+<div class="container">
+  
+</div>
+
+
+
+-->
